@@ -13,7 +13,7 @@
         }
     }
 
-    const objAnimal = new Animal("капибар", "capybara", item.capybara);
+    const objAnimal = new Animal("capybaras", "capybara", item.capybara);
 
     let numOfPhoto = randomizeImg();
     let img = "/" + objAnimal.animalPath + "/" + numOfPhoto + ".webp";
@@ -57,14 +57,14 @@
 
     function clickAnimal() {
         if (objAnimal.animalPath === "capybara") {
-            objAnimal.animal = "выдр"
+            objAnimal.animal = "otters"
             objAnimal.animalPath = "otter"
             objAnimal.animalAmount = item.otter
             listItem = new Array(item.otter)
             counter = 0
             handleClick()
         } else {
-            objAnimal.animal = "капибар"
+            objAnimal.animal = "capybaras"
             objAnimal.animalPath = "capybara"
             objAnimal.animalAmount = item.capybara
             listItem = new Array(item.capybara)
@@ -76,12 +76,12 @@
 
 <main>
     <div id="main-div">
-        <h2>Просто прикоснись ко мне..</h2>
-        <h3>Доступных {objAnimal.animal} - {objAnimal.animalAmount}</h3>
-        <button on:click={clickAnimal}>Если хочешь, что-то другое..</button>
+        <h2>Just click me..</h2>
+        <h3>Available {objAnimal.animal} - {objAnimal.animalAmount}</h3>
+        <button on:click={clickAnimal}>If you want something different..</button>
         <div id="img-div">
             <div>
-                <img id="dog-img" on:click={handleClick} src={img} alt="Здесь живет капибара"/>
+                <img id="dog-img" on:click={handleClick} src={img} alt="There is an animal living here"/>
             </div>
         </div>
     </div>
